@@ -5,14 +5,25 @@ To create project base run:
 `ng new storeApp`
 
 ## TO DO
-- Product Model
-- Main Page
-- Product List Component
-- Product Component
-- Product Details Page
+### Pages
+- Home Page
+    - Product List Component
+        - Product Item Component
+- Product Page
+    - Product Component
+
 - shopping cart
 - Checkout page
 - order confirmation page
+
+### Models:
+- Product Model
+
+## Plan
+### Components:
+- Home Page: app-component: Home Page
+    - includes product list
+- 
 
 ## 1. Create Product Model
 ```bash
