@@ -79,4 +79,32 @@ Check progress on `localhost:3000`, the page should show your product list.
 ng g c Product
 ```
 ### 3.2 Edit `product-component.ts`
+- import 'Input' from '@angular/core' to be able to get data from the parent component (product-list)
+- import `Product` model
+- create variable for product and decorate it with `@Input()` to indicate that it will be provided but the parent component
+- intialize `product` variable in the constructor
 
+```typescript
+```
+
+### 3.3 Edit `product-list-component.html`
+- use `<app-product>` to show product passing along the data to child component
+
+```html
+<h1>{{ title }}</h1>
+<ul>
+    <li *ngFor="let product of productList">
+        <app-product  [product] = product></app-product>
+    </li>
+</ul>
+```
+At this point page should show a list of text "product works!".
+
+### 3.4 Edit `product-component.html'
+
+```html
+<img class="productImage" src="{{ product.url }}" alt="{{ product.name }}">
+<p class="productName">{{ product.name }}</p>
+<p class="productPrice">{{ product.price }}</p>
+```
+At this point page should show a list of pictures with product name and price.
