@@ -10,14 +10,14 @@ import { Product } from '../models/Product';
 export class ProductListComponent implements OnInit {
 
   // add products array to store productList
-  products: Product[] = [];
+  productList: Product[] = [];
   title: string = 'Product List';
 
   constructor() { }
 
   ngOnInit(): void {
     // get productList from server
-    this.products = [
+    this.productList = [
       {
         "id": 1,
         "name": "Book",
