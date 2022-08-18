@@ -9,23 +9,35 @@ To create project base run:
 - Home Page
     - Product List Component
         - Product Item Component
+        - quantity component
+        - Add To Cart Component
 - Product Page
     - Product Component
-
-- shopping cart
+- Shopping Cart Page
+    - product-item component
+    - quantity component
 - Checkout page
-- order confirmation page
+    - cart 
+    - payment info
+- Order Confirmation page
 
 ### Models:
 - Product Model
 
 ## Plan
+### Services
+- Product Service
+Gets product list.
+- Cart Service
+Maintains Cart.
 ### Components:
 - Home Page: app-component: Home Page
     - includes product list
 - 
 
-## 1. Create Product Model
+## Develep App
+### 1. Create Models
+#### 1.1 Create Product Model
 ```bash
 mkdir src/app/models
 touch src/app/models/Product.ts
@@ -50,8 +62,28 @@ export class Product {
 }
 ```
 
-## 2. Create Product List Component
-### 2.1 Create component
+### 2.2 Create `orderItem` Model
+``` bash
+touch src/app/models/orderItem.ts
+```
+```typescript
+
+```
+
+## Create Services
+### Product Service
+#### Create Service
+```bash
+ng g c product
+```
+#### Edit `product.service.ts`
+```typescript
+
+```
+
+## Create Components
+### 1. Create Product List Component
+#### 1.1 Create component
 ```bash
 ng g c ProductList
 ```
