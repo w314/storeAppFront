@@ -72,11 +72,27 @@ touch src/app/models/orderItem.ts
 
 ## Create Services
 ### Product Service
-#### Create Service
+#### Create Product Service
 ```bash
-ng g c product
+mkdir src/app/services
+mkdir src/app/services/product
+ng g c services/product/product
 ```
 #### Edit `product.service.ts`
+- create `getProducts` method to fetch product list
+```typescript
+
+```
+### Cart Service
+#### Create Cart Service
+```bash
+mkdir src/app/services/cart
+ng g c services/cart/cart
+```
+#### Edit `cart.service.ts`
+- create `addToCart` method
+- create `deleteFromCart` method
+- create `modifyQuantity` method
 ```typescript
 
 ```
@@ -92,7 +108,7 @@ ng g c ProductList
 - import `Product` model
 - create variable to store `productList`
 - create variable to page title
-- get product list from server in `ngOnInit()`
+- get product list from ProductService in `ngOnInit()`
 ```typescript
 
 ```
