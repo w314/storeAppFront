@@ -62,14 +62,20 @@ export class Product {
 }
 ```
 
-### 2.2 Create `orderItem` Model
+### 2.2 Create `OrderItem` Model
 ``` bash
-touch src/app/models/orderItem.ts
+touch src/app/models/OrderItem.ts
 ```
 ```typescript
 
 ```
+### Create `Order` Model
+```bash
+touch src/app/models/Order.ts
+```
+```typescript
 
+```
 ## Create Services
 ### Product Service
 #### Create Product Service
