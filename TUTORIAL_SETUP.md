@@ -103,7 +103,64 @@ ng g c services/cart/cart
 
 ```
 
+## Add Router
+### Create Module
+
+```bash
+ng generate module app-routing --flat --module=app
+```
+  `--flat`	Puts the file in src/app instead of its own directory.<br>
+  `--module=app`	Tells ng generate to register it in the imports array of the AppModule.
+
+### Edit module
+``` typescript
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+// import angular router
+import { Routes, RouterModule } from '@angular/router'
+// import components
+import { AppComponent } from './app.component';
+import { ProductListComponent } from './product-list/product-list.component';
+
+// add routes
+const routes: Routes = [
+  { path: '', component: ProductListComponent },
+] 
+
+@NgModule({
+  declarations: [],
+  imports: [
+    CommonModule,
+  ],
+  // export RouterModule
+  exports: [RouterModule]
+})
+
+export class AppRoutingModule { }
+```
+
 ## Create Components
+
+### Create NavBar component
+
+``` bash
+ng g c NavBar
+```
+
+Edit `nav-bar.component.ts`
+```typescript
+
+```
+
+Add NavBar to home page
+`app.component.html`
+```html
+```
+
+### Create Order Item component
+```bash
+ng g c OrderItem
+```
 ### 1. Create Product List Component
 #### 1.1 Create component
 ```bash

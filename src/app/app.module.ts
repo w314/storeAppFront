@@ -7,6 +7,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { CartComponent } from './cart/cart.component';
 import { OrderItemComponent } from './order-item/order-item.component';
 import { AppRoutingModule } from './app-routing.module';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
     ProductComponent,
     ProductListComponent,
     CartComponent,
-    OrderItemComponent
+    OrderItemComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
