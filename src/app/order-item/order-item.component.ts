@@ -34,10 +34,20 @@ export class OrderItemComponent implements OnInit {
   ngOnInit(): void {
   
   }
+  
+  updateQuantity(quantity: number | string) {
+    // console.log('updating quantity');
+    // console.log(quantity)
+    this.quantity = quantity as number
+    // this.item.quantity = quantity;
+    // console.log(this.item.quantity)
+  }
 
   addToCart(item: OrderItem) {
     this.addedToCart.emit()
+    console.log(item)
     this.cartService.addToCart(item)
   }
+
 
 }
