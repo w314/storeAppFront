@@ -15,7 +15,7 @@ export class OrderItemComponent implements OnInit {
   // orderItem will be received from parent 
   @Input() productId: number;
   quantity: number;
-  item: OrderItem;
+  @Input() item: OrderItem;
 
   // create event emitter to communicate click of
   // add to cart button
@@ -36,11 +36,7 @@ export class OrderItemComponent implements OnInit {
   }
   
   updateQuantity(quantity: number | string) {
-    // console.log('updating quantity');
-    // console.log(quantity)
     this.quantity = quantity as number
-    // this.item.quantity = quantity;
-    // console.log(this.item.quantity)
   }
 
   addToCart(item: OrderItem) {

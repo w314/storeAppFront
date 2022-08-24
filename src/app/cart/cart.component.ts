@@ -8,7 +8,7 @@ import { OrderItem } from '../models/OrderItem';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-
+  title: string = 'Your Cart';
   cart: OrderItem[];
 
   constructor(private cartService: CartService) {
