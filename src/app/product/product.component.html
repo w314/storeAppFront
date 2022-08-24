@@ -1,3 +1,7 @@
-<img class="productImage" src="{{ product.url }}" alt="{{ product.name }}">
-<p class="productName">{{ product.name }}</p>
+<a routerLink="/Product/{{ product.id }}">
+    <img class="productImage" src="{{ product.url }}" alt="{{ product.name }}">
+</a>
+<a routerLink="/Product/{{ product.id }}">
+    <p class="productName">{{ product.name }}</p>
+</a>
 <p class="productPrice">{{ product.price }}</p>
