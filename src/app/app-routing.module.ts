@@ -5,13 +5,14 @@ import { Routes, RouterModule } from '@angular/router'
 // import components
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
-// import { ProductComponent } from './product/product.component'
+import { ProductComponent } from './product/product.component'
 
+const PRODUCTPATH = 'Product'
 
 // add routes
 const routes: Routes = [
   { path: '', component: ProductListComponent },
-  // { path: 'Product/:id', component: ProductComponent },
+  { path: `${PRODUCTPATH}/:id`, component: ProductComponent },
 ] 
 
 @NgModule({

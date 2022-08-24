@@ -2,6 +2,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 // import Product model
 import { Product } from '../models/Product'
+// import router
+import { Router } from '@angular/router'
+import { ProductService } from '../services/product/product.service';
 
 
 @Component({
@@ -13,7 +16,7 @@ export class ProductComponent implements OnInit {
   // component will get data from parent
   @Input() product: Product
   
-  constructor() { 
+  constructor(private router:Router, private productService:ProductService) { 
     // with stricter type checking you have to initialize
     // product in the constructor
     this.product = {
@@ -26,6 +29,13 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // console.log(this.router.routes)
+    console.log(this.router.url.slice(9));
+    if( this.router.url.slice(1, 8) === 'Product') {
+      const productId: number = parseInt(this.router.url.slice(9))
+      this.product = this.productService.getProduct(productId)[0]
+    }
+
   }
 
 }
