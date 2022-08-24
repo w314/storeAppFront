@@ -13,23 +13,31 @@ import { CartService } from '../services/cart/cart.service';
 export class OrderItemComponent implements OnInit {
 
   // orderItem will be received from parent 
-  @Input() orderId: number;
+  @Input() productId: number;
+  quantity: number;
+  item: OrderItem;
+
   // create event emitter to communicate click of
   // add to cart button
   @Output() addedToCart: EventEmitter<OrderItem> = new EventEmitter;
 
   // add cartService as parameter to constructor
   constructor(private cartService: CartService) { 
-    this.orderId = 0;
+    this.productId = 0;
+    this.quantity = 0;
+    this.item = {
+      productId: this.productId,
+      quantity: this.quantity,
+    }
   }
 
   ngOnInit(): void {
   
   }
 
-  addToCart(productId: number, quantity: number) {
+  addToCart(item: OrderItem) {
     this.addedToCart.emit()
-    this.cartService.addToCart(productId, quantity)
+    this.cartService.addToCart(item)
   }
 
 }

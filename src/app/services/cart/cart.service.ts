@@ -21,9 +21,9 @@ export class CartService {
     return this.cart.items;
   }
 
-  addToCart(productId: number, quantity: number): void {
+  addToCart(item: OrderItem): void {
     console.log('adding to cart')
-    this.cart.items.push({productId, quantity});
+    this.cart.items.push(item);
     // return this.cart.items;
   }
 }
