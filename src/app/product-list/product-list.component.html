@@ -2,7 +2,7 @@
 <ul>
     <li *ngFor="let product of productList">
         <app-product [product] = product></app-product>
-        <app-order-item></app-order-item>
+        <app-order-item [orderId] = product.id></app-order-item>
         <!-- <a routerLink="Product/{{ product.id }}">
             <img class="productImage" src="{{ product.url }}" alt="{{ product.name }}">
         </a>

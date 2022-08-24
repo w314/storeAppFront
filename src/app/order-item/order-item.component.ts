@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Order } from '../models/Order';
 // import OrderItem model
 import { OrderItem } from '../models/OrderItem';
 
@@ -11,13 +12,13 @@ import { OrderItem } from '../models/OrderItem';
 export class OrderItemComponent implements OnInit {
 
   // orderItem will be received from parent 
-  orderItem: OrderItem;
+  @Input() orderId: number;
+  // create event emitter to communicate click of
+  // add to cart button
+  @Output() addToCart: EventEmitter<OrderItem> = new EventEmitter;
 
   constructor() { 
-    this.orderItem = {
-      productId: 0,
-      quantity: 0
-    }
+    this.orderId = 0;
   }
 
   ngOnInit(): void {

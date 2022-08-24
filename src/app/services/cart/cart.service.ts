@@ -18,7 +18,7 @@ export class CartService {
   }
 
   getCart() {
-    return this.cart;
+    return this.cart.items;
   }
 
   addToCart(productId: number, quantity: number): void {
