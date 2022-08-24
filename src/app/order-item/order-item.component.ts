@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Order } from '../models/Order';
 // import OrderItem model
 import { OrderItem } from '../models/OrderItem';
+import { CartService } from '../services/cart/cart.service';
 
 @Component({
   selector: 'app-order-item',
@@ -15,14 +16,20 @@ export class OrderItemComponent implements OnInit {
   @Input() orderId: number;
   // create event emitter to communicate click of
   // add to cart button
-  @Output() addToCart: EventEmitter<OrderItem> = new EventEmitter;
+  @Output() addedToCart: EventEmitter<OrderItem> = new EventEmitter;
 
-  constructor() { 
+  // add cartService as parameter to constructor
+  constructor(private cartService: CartService) { 
     this.orderId = 0;
   }
 
   ngOnInit(): void {
   
+  }
+
+  addToCart(productId: number, quantity: number) {
+    this.addedToCart.emit()
+    this.cartService.addToCart(productId, quantity)
   }
 
 }

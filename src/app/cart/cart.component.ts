@@ -19,4 +19,8 @@ export class CartComponent implements OnInit {
     this.cart = this.cartService.getCart();
   }
 
+  // ngOnChange(): void {
+  //   this.cart = this.cartService.getCart();
+  // }
+
 }
