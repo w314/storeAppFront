@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 // import Product model
 import { Product } from '../models/Product';
 // import Product service to populate product list
@@ -15,16 +16,19 @@ export class ProductListComponent implements OnInit {
   // add title variable
   title: string = 'Product List';
   // add products array to store productList
-  productList: Product[] = [];
+  products: Product[] = [];
   
+  getProducts():void {
+    this.productService.getProducts()
+      .subscribe(products => this.products = products)
+  }
   // add productService as paramter to constructor
   // add cartService as parameter to constructor
   constructor(private productService: ProductService, private cartService: CartService) { }
 
   ngOnInit(): void {
     // get productList from productService
-    this.productList = this.productService.getProducts();
-
+    this.getProducts();
   }
 
   addToCart(productId: number, quantity: number): void {
