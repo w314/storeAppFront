@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Order } from '../models/Order';
 // import OrderItem model
 import { OrderItem } from '../models/OrderItem';
 import { CartService } from '../services/cart/cart.service';
+import { NgModule } from '@angular/core'
+import { FormsModule } from '@angular/forms'
 
 @Component({
   selector: 'app-order-item',
@@ -14,7 +15,8 @@ export class OrderItemComponent implements OnInit {
 
   // orderItem will be received from parent 
   @Input() productId: number;
-  quantity: number;
+  quantity: number = 0;
+  test: string = 'teszt';
   @Input() item: OrderItem;
 
   // create event emitter to communicate click of
@@ -24,7 +26,7 @@ export class OrderItemComponent implements OnInit {
   // add cartService as parameter to constructor
   constructor(private cartService: CartService) { 
     this.productId = 0;
-    this.quantity = 0;
+    // this.quantity = 0;
     this.item = {
       productId: this.productId,
       quantity: this.quantity,

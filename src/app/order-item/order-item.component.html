@@ -1,13 +1,15 @@
 <!-- <form action=""> -->
 <p>{{ productId }}</p>
+<div class="from-group">
 <input 
-    #orderQuantity (keyup)="updateQuantity(orderQuantity.value)" 
     type="number" 
     min="1"
     step="1"
     max="100"
-    value="{{ quantity }}"
-/>
-<input type="number"/>
+    id="quantity"
+    [(ngModel)]="quantity" name="quantity"
+    >
+<p>you have set quantity to: {{ quantity }}</p>
 <button class="addToCartButton" (click)="addToCart({productId, quantity})">Add To Cart</button>
+</div>
 <!-- </form> -->
