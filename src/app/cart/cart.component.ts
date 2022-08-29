@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { CartService } from '../services/cart/cart.service';
 import { OrderItem } from '../models/OrderItem';
 
@@ -9,11 +10,12 @@ import { OrderItem } from '../models/OrderItem';
 })
 export class CartComponent implements OnInit {
   title: string = 'Your Cart';
-  cart: OrderItem[];
+  cart: OrderItem[] = [];
 
-  constructor(private cartService: CartService) {
-    this.cart = []
-   }
+  constructor(
+      private cartService: CartService,
+      private location: Location
+  ){}
 
   ngOnInit(): void {
     this.cart = this.cartService.getCart();
@@ -22,5 +24,9 @@ export class CartComponent implements OnInit {
   // ngOnChange(): void {
   //   this.cart = this.cartService.getCart();
   // }
+
+  goBack(): void {
+    this.location.back();
+  }
 
 }

@@ -1,1 +1,3 @@
-find a way to show product details in cart
+add go back button to cart
+
+figure out addtocart component
