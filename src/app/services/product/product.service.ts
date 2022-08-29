@@ -15,4 +15,9 @@ export class ProductService {
     const products = of(PRODUCTS)
     return products;
   }
+
+  getProduct(id: number): Observable<Product> {
+    const product = PRODUCTS.find(product => id === product.id)!;
+    return of(product)
+  }
 }

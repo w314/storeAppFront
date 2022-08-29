@@ -8,13 +8,13 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component'
 import { CartComponent } from './cart/cart.component';
 
-const PRODUCTPATH = 'Product'
 
 // add routes
 const routes: Routes = [
-  { path: '', component: ProductListComponent },
-  { path: `${PRODUCTPATH}/:id`, component: ProductComponent },
-  { path: `cart`, component: CartComponent }
+  { path: 'products', component: ProductListComponent },
+  { path: `products/:id`, component: ProductComponent },
+  { path: `cart`, component: CartComponent },
+  { path: '', redirectTo: '/products', pathMatch: 'full'}
 ] 
 
 @NgModule({

@@ -1,7 +1,6 @@
-<a routerLink="/Product/{{ product.id }}">
+<div *ngIf="product">
+    <h2>{{ product.name | uppercase }}</h2>
     <img class="productImage" src="{{ product.url }}" alt="{{ product.name }}">
-</a>
-<a routerLink="/Product/{{ product.id }}">
-    <p class="productName">{{ product.name }}</p>
-</a>
-<p class="productPrice">{{ product.price }}</p>
+    <p class="productPrice">{{ product.price }}</p>    
+    <p class="productDescription">{{ product.description }}</p>
+</div>

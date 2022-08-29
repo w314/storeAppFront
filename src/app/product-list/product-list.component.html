@@ -1,15 +1,15 @@
 <h1>{{ title }}</h1>
 <ul>
     <li *ngFor="let product of products">
-        <button>
+        <!-- <a routerLink="/product{{product.id}}">
             <app-product [product] = product></app-product>
-        </button>
-        <app-order-item [productId] = product.id></app-order-item>
+        </a>
+        <app-order-item [productId] = product.id></app-order-item> -->
         <!-- <a routerLink="Product/{{ product.id }}">
             <img class="productImage" src="{{ product.url }}" alt="{{ product.name }}">
-        </a>
+        </a>-->
         {{ product.name }}
-        {{ product.price }} -->
+        {{ product.price }} 
         
     </li>
 

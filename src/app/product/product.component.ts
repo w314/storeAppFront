@@ -1,5 +1,7 @@
 // add Input to imports from @angular/core 
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 // import Product model
 import { Product } from '../models/Product'
 // import router
@@ -12,30 +14,26 @@ import { ProductService } from '../services/product/product.service';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
+
 export class ProductComponent implements OnInit {
-  // component will get data from parent
-  @Input() product: Product
+
+  product: Product | undefined;
   
-  constructor(private router:Router, private productService:ProductService) { 
-    // with stricter type checking you have to initialize
-    // product in the constructor
-    this.product = {
-      id: 0,
-      name: '',
-      price: 0,
-      description: '',
-      url: ''
-    }
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private location: Location,
+    private router:Router, 
+    private productService:ProductService
+  ) {}
 
   ngOnInit(): void {
-    // console.log(this.router.routes)
-    console.log(this.router.url.slice(9));
-    if( this.router.url.slice(1, 8) === 'Product') {
-      const productId: number = parseInt(this.router.url.slice(9))
-      this.product = this.productService.getProduct(productId)[0]
-    }
-
+      this.getProduct();
   }
 
+  getProduct(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'))
+    console.log(`id: ${id}`)
+    this.productService.getProduct(id)
+      .subscribe(product => this.product = product);
+  }
 }
