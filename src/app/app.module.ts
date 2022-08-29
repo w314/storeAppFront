@@ -9,6 +9,7 @@ import { CartComponent } from './cart/cart.component';
 import { OrderItemComponent } from './order-item/order-item.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { ProuctSnapshotComponent } from './prouct-snapshot/prouct-snapshot.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     ProductListComponent,
     CartComponent,
     OrderItemComponent,
-    NavBarComponent
+    NavBarComponent,
+    ProuctSnapshotComponent
   ],
   imports: [
     BrowserModule,

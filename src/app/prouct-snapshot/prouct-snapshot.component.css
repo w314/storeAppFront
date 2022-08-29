@@ -1,0 +1,16 @@
+img {
+    width: 50px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+}
+
+
+

@@ -1,3 +1,1 @@
-add go back button to cart
-
-figure out addtocart component
+update cart automatically when quantity updated

@@ -14,38 +14,34 @@ import { FormsModule } from '@angular/forms'
 export class OrderItemComponent implements OnInit {
 
   // orderItem will be received from parent 
-  @Input() productId: number;
-  quantity: number = 0;
-  test: string = 'teszt';
-  @Input() item: OrderItem;
+  @Input() id: number = 0;
+  // quantity: number = 0;
+  item?: OrderItem;
 
   // create event emitter to communicate click of
   // add to cart button
-  @Output() addedToCart: EventEmitter<OrderItem> = new EventEmitter;
+  // @Output() addedToCart: EventEmitter<OrderItem> = new EventEmitter;
 
   // add cartService as parameter to constructor
-  constructor(private cartService: CartService) { 
-    this.productId = 0;
-    // this.quantity = 0;
-    this.item = {
-      productId: this.productId,
-      quantity: this.quantity,
-    }
-  }
+  constructor(
+    private cartService: CartService
+  ) {}
 
   ngOnInit(): void {
   
   }
   
-  updateQuantity(quantity: number | string) {
-    this.quantity = quantity as number
-  }
+  // updateQuantity(quantity: number | string) {
+  //   this.quantity = quantity as number
+  // }
 
   addToCart(item: OrderItem) {
-    this.addedToCart.emit()
-    console.log(item)
     this.cartService.addToCart(item)
   }
+
+  // getItem(id: number) {
+
+  // }
 
 
 }

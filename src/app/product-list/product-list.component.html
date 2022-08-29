@@ -2,10 +2,13 @@
 <ul>
     <li *ngFor="let product of products">
         <a routerLink="/products/{{product.id}}">
-            <img src="{{ product.url }}" alt="{{product.name}}">
+            <!-- <img src="{{ product.url }}" alt="{{product.name}}">
             {{ product.name }}
-            {{ product.price }} 
+            {{ product.price }}  -->
+            <app-prouct-snapshot [id]="product.id"></app-prouct-snapshot>
         </a>    
+        <app-order-item [id]="product.id" >
+        </app-order-item>
     </li>
 
 </ul>

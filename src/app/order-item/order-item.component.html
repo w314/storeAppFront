@@ -1,6 +1,6 @@
 <!-- <form action=""> -->
-<p>{{ productId }}</p>
 <div class="from-group">
+<p>id: {{id}} </p>
 <input 
     type="number" 
     min="1"
@@ -10,6 +10,6 @@
     [(ngModel)]="quantity" name="quantity"
     >
 <p>you have set quantity to: {{ quantity }}</p>
-<button class="addToCartButton" (click)="addToCart({productId, quantity})">Add To Cart</button>
+<button class="addToCartButton" (click)="addToCart({productId:id, quantity:quantity})">Add To Cart</button>
 </div>
 <!-- </form> -->
