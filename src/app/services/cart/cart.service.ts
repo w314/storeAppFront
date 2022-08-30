@@ -26,8 +26,7 @@ export class CartService {
     } else {
       this.cart.items[index].quantity += item.quantity;
     }
-
-}
+  }
 
   getItem(id: number): OrderItem | undefined {
     return this.cart.items.find(item => item.productId === id)
@@ -36,6 +35,11 @@ export class CartService {
   deleteItem(id: number): void {
     const index = this.getItemIndex(id);
     this.cart.items.splice(index, 1)
+  }
+
+  updateItem(item: OrderItem):void {
+    const index = this.getItemIndex(item.productId);
+    this.cart.items[index].quantity = item.quantity;
   }
 
   private getItemIndex(id: number) {

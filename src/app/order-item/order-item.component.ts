@@ -36,12 +36,12 @@ export class OrderItemComponent implements OnInit {
   deleteItem(id: number) {
     this.cartService.deleteItem(id);
   }
-  // updateQuantity(quantity: number | string) {
-  //   this.quantity = quantity as number
-  // } 
+  updateItem(item: OrderItem) {
+    this.cartService.updateItem(item);
+  } 
 
   addToCart(item: OrderItem) {
-    this.cartService.addToCart(item)
+    this.cartService.addToCart({productId: this.id, quantity: this.quantity})
   }
 
   getItem(id: number):number {
