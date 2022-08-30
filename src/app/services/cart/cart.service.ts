@@ -39,7 +39,11 @@ export class CartService {
 
   updateItem(item: OrderItem):void {
     const index = this.getItemIndex(item.productId);
-    this.cart.items[index].quantity = item.quantity;
+    if( item.quantity === 0 ) {
+      this.cart.items.splice(index, 1)
+    } else {
+      this.cart.items[index].quantity = item.quantity
+    }
   }
 
   private getItemIndex(id: number) {
