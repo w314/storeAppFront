@@ -10,6 +10,7 @@ import { OrderItemComponent } from './order-item/order-item.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ProuctSnapshotComponent } from './prouct-snapshot/prouct-snapshot.component';
+import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProuctSnapshotComponent } from './prouct-snapshot/prouct-snapshot.compo
     CartComponent,
     OrderItemComponent,
     NavBarComponent,
-    ProuctSnapshotComponent
+    ProuctSnapshotComponent,
+    AddToCartComponent
   ],
   imports: [
     BrowserModule,
