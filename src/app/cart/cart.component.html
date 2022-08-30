@@ -1,8 +1,6 @@
 {{ title }}
 <ul>
     <li *ngFor="let item of cart">
-        <!-- {{ item.productId }}
-        {{ item.quantity }} -->
         <app-order-item [id]="item.productId"></app-order-item>
     </li>
 </ul>

@@ -33,6 +33,11 @@ export class CartService {
     return this.cart.items.find(item => item.productId === id)
   }
 
+  deleteItem(id: number): void {
+    const index = this.getItemIndex(id);
+    this.cart.items.splice(index, 1)
+  }
+
   private getItemIndex(id: number) {
     return this.cart.items.findIndex(cartItem => cartItem.productId === id);
   }

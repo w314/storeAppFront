@@ -1,15 +1,12 @@
-<!-- <form action=""> -->
 <div>
-<p>id: {{item.productId}} </p>
-<input 
-    type="number" 
-    min="1"
-    step="1"
-    max="100"
-    id="item.quantity"
-    [(ngModel)]="item.quantity" name="item.quantity"
+    <app-prouct-snapshot [id]="item.productId"></app-prouct-snapshot>
+    <input 
+        type="number" 
+        min="1"
+        step="1"
+        max="100"
+        id="item.quantity"
+        [(ngModel)]="item.quantity" name="item.quantity"
     >
-<p>you have set quantity to: {{ item.quantity }}</p>
-<button class="addToCartButton" (click)="addToCart({productId:item.productId, quantity:item.quantity})">Add To Cart</button>
+    <button type="button"(click)="deleteItem(item.productId)">Delete</button>
 </div>
-<!-- </form> -->
