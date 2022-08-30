@@ -13,10 +13,10 @@ import { FormsModule } from '@angular/forms'
 
 export class OrderItemComponent implements OnInit {
 
-  // orderItem will be received from parent 
-  @Input() id: number = 0;
+  // orderItem will be received from parent
+  @Input() id: number = 0; 
+  item: OrderItem = {productId: this.id, quantity: 0};
   // quantity: number = 0;
-  item?: OrderItem;
 
   // create event emitter to communicate click of
   // add to cart button
@@ -28,20 +28,26 @@ export class OrderItemComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-  
+    this.item = {productId: this.id, quantity: this.getItem(this.id)}
   }
   
   // updateQuantity(quantity: number | string) {
   //   this.quantity = quantity as number
-  // }
+  // } 
 
   addToCart(item: OrderItem) {
     this.cartService.addToCart(item)
   }
 
-  // getItem(id: number) {
+  getItem(id: number):number {
+    const item = this.cartService.getItem(id)
+    if(item) {
+      return item.quantity 
+    } else {
+      return 0
+    }
 
-  // }
+  }
 
 
 }

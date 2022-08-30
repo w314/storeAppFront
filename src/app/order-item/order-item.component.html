@@ -1,15 +1,15 @@
 <!-- <form action=""> -->
-<div class="from-group">
-<p>id: {{id}} </p>
+<div>
+<p>id: {{item.productId}} </p>
 <input 
     type="number" 
     min="1"
     step="1"
     max="100"
-    id="quantity"
-    [(ngModel)]="quantity" name="quantity"
+    id="item.quantity"
+    [(ngModel)]="item.quantity" name="item.quantity"
     >
-<p>you have set quantity to: {{ quantity }}</p>
-<button class="addToCartButton" (click)="addToCart({productId:id, quantity:quantity})">Add To Cart</button>
+<p>you have set quantity to: {{ item.quantity }}</p>
+<button class="addToCartButton" (click)="addToCart({productId:item.productId, quantity:item.quantity})">Add To Cart</button>
 </div>
 <!-- </form> -->
