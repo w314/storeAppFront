@@ -9,13 +9,9 @@ import { Order } from '../../models/Order'
 })
 
 export class CartService {
-  cart: Order;
+  cart: Order = {items:[], status: 'active'};
 
   constructor() {
-    this.cart = {
-      items: [],
-      status: 'active',
-    }
   }
 
   getCart() {
@@ -24,15 +20,20 @@ export class CartService {
 
   addToCart(item: OrderItem): void {
     console.log('adding to cart')
-    this.cart.items.push(item);
-    // return this.cart.items;
-  }
+    const index = this.getItemIndex(item.productId)
+    if( index === -1 ) {
+      this.cart.items.push(item)
+    } else {
+      this.cart.items[index].quantity += item.quantity;
+    }
+
+}
 
   getItem(id: number): OrderItem | undefined {
     return this.cart.items.find(item => item.productId === id)
   }
 
-  // updateItem(item: OrderItem) {
-  //   this.cart.items[item.productId] = item.quantity;
-  // }
+  private getItemIndex(id: number) {
+    return this.cart.items.findIndex(cartItem => cartItem.productId === id);
+  }
 }

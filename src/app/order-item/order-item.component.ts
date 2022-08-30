@@ -15,7 +15,8 @@ export class OrderItemComponent implements OnInit {
 
   // orderItem will be received from parent
   @Input() id: number = 0; 
-  item: OrderItem = {productId: this.id, quantity: 0};
+  quantity: number = 0;
+  item: OrderItem = {productId: this.id, quantity: this.quantity};
   // quantity: number = 0;
 
   // create event emitter to communicate click of

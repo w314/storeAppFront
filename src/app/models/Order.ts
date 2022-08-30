@@ -1,12 +1,10 @@
 import { OrderItem } from './OrderItem'
 
 export class Order {
-    items: OrderItem [];
-    status: 'active' | 'closed';
+    items: OrderItem[] = [];
+    status: 'active' | 'closed' = 'active';
 
     constructor() {
-        this.items =  [];
-        this.status = 'active';
     }
 }
 
