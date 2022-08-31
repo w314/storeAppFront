@@ -3,6 +3,17 @@
     height: 100px;
 }
 
-.name {
-    font-size: 1.2rem;
+.product {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-snapshot {
+    width: 60%;
+}
+
+.order {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
 }

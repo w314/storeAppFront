@@ -4,7 +4,7 @@ import { CartService } from '../services/cart/cart.service';
 @Component({
   selector: 'app-add-to-cart',
   templateUrl: './add-to-cart.component.html',
-  styleUrls: ['./add-to-cart.component.css']
+  styleUrls: ['../app.component.css','./add-to-cart.component.css']
 })
 export class AddToCartComponent implements OnInit {
 

@@ -1,12 +1,14 @@
 
-<div *ngIf="product">
-    <div>
-        <h2>{{ product.name | uppercase }}</h2>
-        <img class="productImage" src="{{ product.url }}" alt="{{ product.name }}">
-        <p class="productPrice">{{ product.price }}</p>    
-        <p class="productDescription">{{ product.description }}</p>
+<div class="content" *ngIf="product">
+    <div class="product">
+        <app-prouct-snapshot class="product-snapshot" [id]="product.id"></app-prouct-snapshot>
+        <app-add-to-cart class="order" [id]=product.id></app-add-to-cart>
     </div>
-    <app-add-to-cart [id]=product.id></app-add-to-cart>
+    <p class="productDescription">{{ product.description }}</p>
 </div>
-
-<button type="button" (click)="goBack()">go back</button>
+<div class="go-back">
+    <button class="go-back-button" type="button" (click)="goBack()">go back</button>
+</div>
+<!-- <h2>{{ product.name | uppercase }}</h2>
+<img class="productImage" src="{{ product.url }}" alt="{{ product.name }}">
+<p class="productPrice">{{ product.price }}</p>     -->

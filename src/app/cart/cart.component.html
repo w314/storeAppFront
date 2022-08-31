@@ -3,8 +3,10 @@
 <ul>
     <li *ngFor="let item of cart">
         <app-order-item [id]="item.productId"></app-order-item>
+        <hr>
     </li>
 </ul>
+
 <div *ngIf="cart.length===0">
     <p class="empty-cart">your cart is empty</p>
     <fieldset>
@@ -13,6 +15,6 @@
     </fieldset>
 </div>
 </div>
-<div class="go-back-div">
+<div class="go-back">
     <button class="button go-back-button" type="button" (click)="goBack()">go back</button>
 </div>
