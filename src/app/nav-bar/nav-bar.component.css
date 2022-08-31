@@ -1,0 +1,23 @@
+nav {
+    margin: auto;
+    padding: 10px;
+}
+
+a {
+    width: 40%;
+    background-color: aliceblue;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: inherit;
+    color:darkgreen;
+    font-size: 1rem;
+    margin: 0 5px 0 5px;
+}
+
+a.active {
+    border: 2px solid darkgreen;
+}
+/* 
+a:hover {
+    text-decoration: underline;
+} */

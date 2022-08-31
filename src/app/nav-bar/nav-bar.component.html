@@ -1,7 +1,7 @@
 <nav>
-    <h1>The Store</h1>
-    <ul>
-        <li><a routerLink="/">Products</a></li>
-        <li><a routerLink="/cart">Your Cart</a></li>
-    </ul>
+    <!-- <a [class.active]="getUrl()==='/products'" routerLink="/">Products</a>
+    <a [class.active]="getUrl()==='/cart'" routerLink="/cart">Your Cart</a> -->
+    <a routerLink="/products" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active">Products</a>
+    <a routerLink="/cart" routerLinkActive="active">Your Cart</a>
+
 </nav>
