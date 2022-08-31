@@ -20,4 +20,9 @@ export class ProductService {
     const product = PRODUCTS.find(product => id === product.id)!;
     return of(product)
   }
+
+  getRandomProduct(): Observable<Product> {
+    const index:number = Math.floor(Math.random() * PRODUCTS.length)
+    return of(PRODUCTS[index]);
+  }
 }

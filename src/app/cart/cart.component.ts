@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { CartService } from '../services/cart/cart.service';
 import { OrderItem } from '../models/OrderItem';
+import { ProductService } from '../services/product/product.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['../app.component.css','./cart.component.css']
 })
 export class CartComponent implements OnInit {
   title: string = 'Your Cart';
@@ -14,7 +15,8 @@ export class CartComponent implements OnInit {
 
   constructor(
       private cartService: CartService,
-      private location: Location
+      private location: Location,
+      private productService: ProductService,
   ){}
 
   ngOnInit(): void {
@@ -27,6 +29,13 @@ export class CartComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  getRandomProductId(): number {
+    let id: number = 0;
+    this.productService.getRandomProduct()
+      .subscribe(product => id = product.id)
+    return id;
   }
 
 }

@@ -6,7 +6,7 @@ import { Observable, of } from 'rxjs';
 @Component({
   selector: 'app-prouct-snapshot',
   templateUrl: './prouct-snapshot.component.html',
-  styleUrls: ['./prouct-snapshot.component.css']
+  styleUrls: ['../app.component.css','./prouct-snapshot.component.css']
 })
 export class ProuctSnapshotComponent implements OnInit {
 

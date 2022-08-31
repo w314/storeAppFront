@@ -1,3 +1,7 @@
+.app {
+    background-color: aliceblue;
+}
+
 .header {
     width: 100%;
     text-align: center;
@@ -6,9 +10,42 @@
     padding: 3px;
 }
 
+.content {
+    padding: 15px;
+}
+
 h1 {
     font-size: 1.6rem;
     color:aliceblue;
     padding: 5px, 5px, 5px, 10px;
     margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.button {
+    width: 40%;
+    background-color: aliceblue;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: inherit;
+    color:darkgreen;
+    font-size: 1rem;
+}
+
+
+.go-back-div {
+    background-color: cadetblue;
+    padding: 10px;
+}
+
+.go-back-button {
+    margin: auto;
+    border: none;
+    display: block;
+    font-size: 0.8rem;
+    font-variant: small-caps;
 }

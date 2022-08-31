@@ -3,14 +3,7 @@ nav {
     padding: 10px;
 }
 
-a {
-    width: 40%;
-    background-color: aliceblue;
-    padding: 5px;
-    border-radius: 5px;
-    text-decoration: inherit;
-    color:darkgreen;
-    font-size: 1rem;
+.menu-item {
     margin: 0 5px 0 5px;
 }
 
