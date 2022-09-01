@@ -9,7 +9,7 @@ import { CartService } from '../services/cart/cart.service';
 export class AddToCartComponent implements OnInit {
 
   @Input() id: number = 0;
-  quantity: number = 0;
+  quantity: number = 1;
 
   constructor(
     private cartService: CartService
