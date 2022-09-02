@@ -10,6 +10,7 @@ export class AddToCartComponent implements OnInit {
 
   @Input() id: number = 0;
   quantity: number = 1;
+  submitted = false;
 
   constructor(
     private cartService: CartService
@@ -19,7 +20,10 @@ export class AddToCartComponent implements OnInit {
   }
 
   addToCart(): void {
-    this.cartService.addToCart({productId: this.id, quantity: this.quantity})
+    if (this.quantity > 0 ) {
+      this.cartService.addToCart({productId: this.id, quantity: this.quantity})
+      this.submitted = true;
+    }
   }
 
 }

@@ -7,14 +7,15 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component'
 import { CartComponent } from './cart/cart.component';
-
+import { CheckoutComponent } from './checkout/checkout.component';
 
 // add routes
 const routes: Routes = [
   { path: 'products', component: ProductListComponent },
   { path: `products/:id`, component: ProductComponent },
   { path: `cart`, component: CartComponent },
-  { path: '', redirectTo: '/products', pathMatch: 'full'}
+  { path: '', redirectTo: '/products', pathMatch: 'full'},
+  { path: 'checkout', component: CheckoutComponent}
 ] 
 
 @NgModule({

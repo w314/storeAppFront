@@ -230,3 +230,36 @@ At this point page should show a list of text "product works!".
 <p class="productPrice">{{ product.price }}</p>
 ```
 At this point page should show a list of pictures with product name and price.
+
+
+## Add Form
+
+### Import `FormsModule`
+`src/app.module.ts` (excerpt)
+```typescript
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  imports: [
+    FormsModule,
+  ]
+})
+```
+
+### Add form to component
+`add-to-cart.component.html`
+```html
+```
+
+### style forms
+1. Create style sheet
+```bash
+touch src/assets/forms.css
+```
+
+2. In the `src/index.html` update the `<head>` tag to include the style sheet
+```html
+<link rel=stylesheet href="assets/forms.css">
+```
+
+

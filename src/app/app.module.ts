@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ProuctSnapshotComponent } from './prouct-snapshot/prouct-snapshot.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
     OrderItemComponent,
     NavBarComponent,
     ProuctSnapshotComponent,
-    AddToCartComponent
+    AddToCartComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
