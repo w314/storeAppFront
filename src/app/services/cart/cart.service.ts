@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 // import models
 import { OrderItem } from '../../models/OrderItem'
 import { Order } from '../../models/Order'
+import { isNgTemplate } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -28,21 +29,29 @@ export class CartService {
     }
   }
 
-  getItem(id: number): OrderItem | undefined {
+  getItem(id: number): OrderItem | undefined {CartService
     return this.cart.items.find(item => item.productId === id)
   }
 
   deleteItem(id: number): void {
-    const index = this.getItemIndex(id);
-    this.cart.items.splice(index, 1)
+    // const index = this.getItemIndex(id);
+    // this.cart.items.splice(index, 1)
+    this.cart.items = this.cart.items.filter((item) => item.productId != id)
   }
 
-  updateItem(item: OrderItem):void {
-    const index = this.getItemIndex(item.productId);
-    if( item.quantity === 0 ) {
-      this.cart.items.splice(index, 1)
+  updateQuantity(id: number, quantity: number):void {
+    console.log(`updating product wiht id: ${id} to quantity: ${quantity}`)
+    // const index = this.getItemIndex(id);
+    if( quantity === 0 ) {
+      this.deleteItem(id)
+      // this.cart.items.splice(index, 1)
     } else {
-      this.cart.items[index].quantity = item.quantity
+      this.cart.items.forEach(item => {
+        if( item.productId === id) {
+          item.quantity = quantity
+        }
+      }
+      )
     }
   }
 

@@ -15,9 +15,9 @@ export class OrderItemComponent implements OnInit {
 
   // orderItem will be received from parent
   @Input() id: number = 0; 
+  // quantity is 
   quantity: number = 0;
-  item: OrderItem = {productId: this.id, quantity: this.quantity};
-  // quantity: number = 0;
+  // item: OrderItem = {productId: this.id, quantity: this.quantity};
 
   // create event emitter to communicate click of
   // add to cart button
@@ -29,22 +29,34 @@ export class OrderItemComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.item = {productId: this.id, quantity: this.getItem(this.id)}
+    // get quantity from cart service
+    // this.item = {productId: this.id, quantity: this.getItem(this.id)}
+    this.quantity = this.getQuantity(this.id)
   }
   
 
   deleteItem(id: number) {
     this.cartService.deleteItem(id);
   }
-  updateItem(item: OrderItem) {
-    this.cartService.updateItem(item);
+
+  
+  updateQuantity() {
+    this.cartService.updateQuantity(this.id, this.quantity);
   } 
 
   addToCart(item: OrderItem) {
     this.cartService.addToCart({productId: this.id, quantity: this.quantity})
   }
 
-  getItem(id: number):number {
+  // getItem(id: number):number {
+  //   const item = this.cartService.getItem(id)
+  //   if(item) {
+  //     return item.quantity 
+  //   } else {
+  //     return 0
+  //   }
+
+  getQuantity(id: number):number {
     const item = this.cartService.getItem(id)
     if(item) {
       return item.quantity 
@@ -52,6 +64,7 @@ export class OrderItemComponent implements OnInit {
       return 0
     }
 
+  
   }
 
 
