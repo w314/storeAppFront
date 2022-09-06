@@ -11,7 +11,7 @@
 .order {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: top;
     text-align: center;
     padding: 15px;
 }
@@ -20,7 +20,7 @@
     color: blue;
     text-decoration: underline;
     background-color: inherit;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     border: none;
     margin-top: 10px;
 }
