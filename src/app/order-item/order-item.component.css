@@ -20,7 +20,7 @@
     color: blue;
     text-decoration: underline;
     background-color: inherit;
-    font-size: 0.9rem;
     border: none;
-    margin-top: 10px;
+    margin: 10px auto;
+    display: block;
 }
