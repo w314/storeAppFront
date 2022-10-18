@@ -1,0 +1,11 @@
+<div class="content" *ngIf="product">
+    <a routerLink="/products/{{product.id}}">
+        <div class="container">
+        <img src="{{product.url}}" alt="{{product.name}}">
+        <div class="details">
+            <p class="name">{{product.name}}</p>
+            <p class="price">{{product.price | currency}}</p>
+        </div>
+        </div>  
+    </a>
+</div>

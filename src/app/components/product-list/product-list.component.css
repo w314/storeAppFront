@@ -1,0 +1,17 @@
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.product {
+    width: 60%;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+}

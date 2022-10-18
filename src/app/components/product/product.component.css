@@ -1,0 +1,19 @@
+.productImage {
+    width: 100px;
+    height: 100px;
+}
+
+.product {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-snapshot {
+    width: 60%;
+}
+
+.order {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
+}

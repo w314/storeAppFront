@@ -1,0 +1,28 @@
+<div class="content">
+    <div class="item">
+        <app-prouct-snapshot [id]="id"></app-prouct-snapshot>
+    </div>
+    <form #quantityForm="ngForm">
+        <div class="order">
+            <div class="form-group">
+                <label for="quantity">Quantity</label>        
+                <input class="form-control"
+                    [(ngModel)]="quantity"
+                    #quantityInput="ngModel"
+                    min="0"
+                    max="100"
+                    step="1"
+                    value="quantity"
+                    type="number"
+                    name="quantity"
+                    required
+                    (keyup)="updateQuantity()"
+                >
+                <div [hidden]="quantityInput.valid || quantityInput.pristine" class="alert alert-danger">
+                    Quantity is required.</div>
+                <p>current set to: {{quantity}}</p>
+            </div>
+        </div>
+        <button class="delete-button" type="button" (click)="deleteItem(id)">delete</button>
+    </form>
+</div>

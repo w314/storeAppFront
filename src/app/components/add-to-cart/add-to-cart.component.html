@@ -1,0 +1,33 @@
+<div [hidden]="submitted">
+    <form class="add-to-cart" #addToCartForm="ngForm" (ngSubmit)="addToCart()">    
+        <!-- #quantity="ngModel" -->
+        <div class="form-group">
+            <label for="quantity">Quantity</label>        
+            <input class="form-control"
+                [(ngModel)]="quantity"
+                #quantityInput="ngModel"
+                min="0"
+                max="100"
+                step="1"
+                value="quantity"
+                type="number"
+                name="quantity"
+                required
+            >
+            <div [hidden]="quantityInput.valid || quantityInput.pristine" class="alert alert-danger">
+                Quantity is required.</div>
+        </div>
+        <button class="btn btn-success" type="submit" 
+            [disabled]="!quantityInput.valid">Add To Cart</button>
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+    <form class="addToCart">
+        <div class="form-group">
+            <p>{{quantity}} added to cart.</p>
+            <button class="btn btn-warning" routerLink="/checkout">Checkout</button>      
+            <button class="btn btn-light" routerLink="/cart">Go To Cart</button>
+        </div>
+    </form>
+</div>

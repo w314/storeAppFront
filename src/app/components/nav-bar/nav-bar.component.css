@@ -1,0 +1,16 @@
+nav {
+    margin: auto;
+    padding: 10px;
+}
+
+.menu-item {
+    margin: 0 5px 0 5px;
+}
+
+a.active {
+    border: 2px solid darkgreen;
+}
+/* 
+a:hover {
+    text-decoration: underline;
+} */
